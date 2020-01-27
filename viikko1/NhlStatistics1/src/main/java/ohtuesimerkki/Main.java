@@ -13,7 +13,7 @@ public class Main {
         System.out.println("");
         
         System.out.println("Top scorers");
-        for (Player player : stats.topScorers(10) ) {
+        for (Player player : stats.topScorers(3) ) {
             System.out.println( player );
         }        
     }

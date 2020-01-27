@@ -12,10 +12,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- *
- * @author juhakoivu
- */
+
 public class StatisticsTest {
  
     Reader readerStub = new Reader() {
@@ -42,7 +39,27 @@ public class StatisticsTest {
     }
     
     @Test
-    public void unknownTeamEmpty() {
+    public void olematonJoukkueEiLoydy() {
     	Assert.assertTrue(this.stats.team("Unknown").isEmpty());
+    }
+    
+    @Test
+    public void pelaajaLoytyy() {
+        Assert.assertTrue(this.stats.search("Kurri").getName().contains("Kurri"));
+    }
+    
+    @Test
+    public void olematonPelaajaEiLoydy() {
+    	Assert.assertNull(this.stats.search("Unknown"));
+    }
+    
+    @Test
+    public void oikeaMaaraTopPelaajia() {
+        assertEquals(3, stats.topScorers(3).size());
+    }
+    
+    @Test
+    public void oikeaMaaraJoukkueenPelaajia() {
+        assertEquals(3, this.stats.team("EDM").size());
     }
 }
