@@ -5,15 +5,8 @@
  */
 package ohtu;
 
-/**
- *
- * @author juhakoivu
- */
 public class Tennis {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         TennisGame game = new TennisGame("player1", "player2");
 
