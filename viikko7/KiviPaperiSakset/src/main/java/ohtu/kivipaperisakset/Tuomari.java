@@ -14,22 +14,13 @@ public class Tuomari {
     }
 
     public void kirjaaSiirto(String ekanSiirto, String tokanSiirto) {
-        if (tasapeli(ekanSiirto, tokanSiirto)) {
+        if (ekanSiirto.equals(tokanSiirto)) {
             tasapelit++;
         } else if (ekaVoittaa(ekanSiirto, tokanSiirto)) {
             ekanPisteet++;
         } else {
             tokanPisteet++;
         }
-    }
-
-    // sisäinen metodi, jolla tarkastetaan tuliko tasapeli
-    private static boolean tasapeli(String eka, String toka) {
-        if (eka.equals(toka)) {
-            return true;
-        }
-
-        return false;
     }
 
     // sisäinen metodi joka tarkastaa voittaako eka pelaaja tokan
@@ -46,8 +37,7 @@ public class Tuomari {
     }
 
     public String toString() {
-        String s = "Pelitilanne: " + ekanPisteet + " - " + tokanPisteet + "\n"
-                + "Tasapelit: " + tasapelit;
-        return s;
+        return "\nPelitilanne: " + ekanPisteet + " - " + tokanPisteet + "\n"
+                + "Tasapelit: " + tasapelit + "\n";
     }
 }
